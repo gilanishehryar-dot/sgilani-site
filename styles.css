@@ -1,4 +1,4 @@
-:root{--navy:#0E1C30;--navy-2:#091419;--gold:#B89A5E;--gold-dk:#7A6232;--paper:#F5F0F0;--white:#FFFFFF;--line:#E2E6E9;--body:#2B3A4E;--muted:#5A6778;--on-dark:#E2E6E9;--on-dark-muted:#AEB8C2;--serif:Merriweather,Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{--navy:#2A2829;--navy-2:#5A2B38;--gold:#B88A73;--gold-dk:#5A2B38;--paper:#F4EDE4;--white:#FBF7F1;--line:#E3D6C6;--body:#4A4446;--muted:#6B6163;--on-dark:#EADCCD;--on-dark-muted:#D2BFAE;--sand:#EADCCD;--serif:Newsreader,Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--navy);background:var(--paper)}
@@ -178,3 +178,61 @@ a.card:hover h3{color:var(--gold-dk)}
  .prose blockquote{font-size:20px}
 }
 @media print{.site-header,.site-footer,.aside,.share{display:none}body{background:#fff}}
+
+/* ---- Burgundy & Sand editorial overrides ---- */
+h1,h2,h3{font-weight:600;letter-spacing:-.005em}
+.eyebrow{letter-spacing:.02em;text-transform:none;font-size:15px;font-weight:500;color:var(--gold-dk)}
+.site-header{background:var(--paper);border-bottom:1px solid var(--line)}
+.brand-name{color:var(--navy);letter-spacing:0;font-size:22px}
+.brand-post{color:var(--muted);letter-spacing:.08em}
+.nav a{color:var(--body)}
+.nav a:hover,.nav a[aria-current=page]{color:var(--gold-dk)}
+.menu-toggle{color:var(--navy);border-color:var(--line)!important}
+.btn{background:var(--gold-dk);color:#F6EEE4!important}
+.btn:hover{background:#6E3646}
+.nav .btn{color:#F6EEE4!important}
+.btn-navy{background:var(--navy);color:#F6EEE4!important}
+.btn-ghost{background:transparent;color:var(--navy)!important}
+.dark .btn-ghost{color:var(--sand)!important}
+.hero.dark,.art-hero.dark{background:var(--sand);color:var(--body);border-bottom:1px solid var(--line)}
+.hero.dark h1,.hero.dark h2,.art-hero.dark h1{color:var(--navy)}
+.hero.dark .eyebrow,.art-hero.dark .eyebrow{color:var(--gold-dk)}
+.hero.dark .lead,.art-hero.dark .lead{color:var(--body)}
+.hero.dark .btn-ghost,.art-hero.dark .btn-ghost{color:var(--navy)!important}
+.art-hero.dark .back{color:var(--body)!important}
+.art-hero.dark .byline{color:var(--body);border-top-color:var(--line)}
+.art-hero.dark .byline strong{color:var(--navy)}
+.art-hero.dark span[style*="color:var(--paper)"]{color:var(--navy)!important}
+.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.1}
+.dark{background:var(--navy);color:var(--on-dark)}
+.dark h1,.dark h2,.dark h3{color:#F6EEE4}
+.dark .eyebrow{color:var(--gold)}
+.darker{background:var(--navy-2);color:var(--on-dark)}
+.proof{border-top:0}
+.stat b{color:#F6EEE4}
+.stat span{color:var(--sand)}
+.proof .stat{border-left:1px solid rgba(184,138,115,.6);padding-left:20px}
+.pillars{background:rgba(184,138,115,.4);border-color:rgba(184,138,115,.4)}
+.pillars > div{background:var(--navy)}
+.pillars .num{color:var(--gold)}
+.context .lbl{color:var(--on-dark-muted)}
+.context .val{color:#F6EEE4}
+.subnav a{color:var(--on-dark-muted)}
+.subnav a[aria-current=page]{color:#F6EEE4;border-bottom-color:var(--sand)}
+.layer.portfolio{background:var(--white);border-color:var(--gold-dk)}
+.chip.on{background:var(--gold-dk);border-color:var(--gold-dk)}
+.prose blockquote{border-left-color:var(--gold-dk)}
+.site-footer{background:var(--navy);color:var(--on-dark-muted)}
+.site-footer a{color:var(--sand)}
+.paper-link{border-top-color:var(--navy)}
+.lesson{background:var(--navy-2)}
+.lesson .eyebrow{color:var(--sand)}
+.card.top{border-top-color:var(--gold-dk)}
+.outcome{border-top-color:var(--gold-dk)}
+.callout{border-left-color:var(--gold-dk)}
+.rule{background:var(--gold-dk)}
+
+.card .kicker{text-transform:none;letter-spacing:0;font-size:14px;font-weight:600;color:var(--gold-dk)}
+.dark .card .kicker{color:var(--gold)}
+.context .lbl{text-transform:none;letter-spacing:0;font-size:13px}
+@media (max-width:860px){.hero-photo{order:0}.hero-photo img{max-height:420px;object-fit:cover;object-position:top}.brand-name{font-size:19px}}
