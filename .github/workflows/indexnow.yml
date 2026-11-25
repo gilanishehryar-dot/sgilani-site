@@ -1,0 +1,22 @@
+name: Submit pages to IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to publish
+        run: sleep 90
+      - name: Submit sitemap URLs
+        run: |
+          KEY=efe0d9e53a09b8ae58551776fdfc66c9
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's/<[^>]*>//g' | jq -R . | jq -s .)
+          jq -n --arg key "$KEY" --argjson urls "$URLS" \
+            '{host:"sgilani.com", key:$key, keyLocation:("https://sgilani.com/"+$key+".txt"), urlList:$urls}' > body.json
+          curl -sS -o /dev/null -w "IndexNow response: %{http_code}\n" \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @body.json https://api.indexnow.org/indexnow
